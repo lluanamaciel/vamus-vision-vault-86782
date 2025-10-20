@@ -79,10 +79,37 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Nossas Marcas</h4>
             <ul className="space-y-2">
-              <li className="text-secondary-foreground/80">Body Monster</li>
-              <li className="text-secondary-foreground/80">Atacadão Suplementos</li>
+              <li>
+                <a 
+                  href="https://bodymonstersuplementos.com.br/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                >
+                  Body Monster
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://instagram.com/atacadaosuplementos.am" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                >
+                  Atacadão Suplementos
+                </a>
+              </li>
               <li className="text-secondary-foreground/80">Quiosques Pacco</li>
-              <li className="text-secondary-foreground/80">Vita Verde</li>
+              <li>
+                <a 
+                  href="https://vytaverde.com.br/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                >
+                  Vyta Verde
+                </a>
+              </li>
             </ul>
           </div>
         </div>

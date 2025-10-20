@@ -3,9 +3,9 @@ import { MapPin, Store, Building2, TrendingUp } from "lucide-react";
 
 const Presence = () => {
   const stats = [
-    { icon: Store, label: "Lojas Físicas", value: "4+", description: "Unidades estratégicas" },
-    { icon: Building2, label: "Quiosques", value: "2", description: "Shoppings de alto fluxo" },
-    { icon: MapPin, label: "Distribuição", value: "100%", description: "Cobertura no Amazonas" },
+    { icon: Store, label: "Lojas Físicas", value: "5", description: "Unidades estratégicas" },
+    { icon: Building2, label: "Quiosques", value: "4", description: "Shoppings de alto fluxo" },
+    { icon: MapPin, label: "Centro Distribuição", value: "1", description: "Cobertura no Amazonas" },
     { icon: TrendingUp, label: "Crescimento", value: "Contínuo", description: "Expansão nacional" },
   ];
 

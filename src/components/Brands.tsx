@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Dumbbell, Package, Droplet, Leaf } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Dumbbell, Package, Droplet, Leaf, Globe, Instagram, Phone } from "lucide-react";
 import bodyMonsterImage from "@/assets/body-monster.jpg";
 import atacadaoImage from "@/assets/atacadao.jpg";
 import paccoImage from "@/assets/pacco.jpg";
@@ -15,7 +16,10 @@ const Brands = () => {
       icon: Dumbbell,
       image: bodyMonsterImage,
       color: "primary",
-      features: ["Atletas e Fitness", "Entrega Rápida", "Preços Competitivos"]
+      features: ["Atletas e Fitness", "Entrega Rápida", "Preços Competitivos"],
+      website: "https://bodymonstersuplementos.com.br/",
+      instagram: "https://instagram.com/bodymonstersuplementos",
+      phone: null
     },
     {
       name: "Atacadão Suplementos",
@@ -24,25 +28,35 @@ const Brands = () => {
       icon: Package,
       image: atacadaoImage,
       color: "secondary",
-      features: ["B2B Distribuição", "+20 Marcas", "Todo Amazonas"]
+      features: ["B2B Distribuição", "+20 Marcas", "Todo Amazonas"],
+      website: null,
+      instagram: "https://instagram.com/atacadaosuplementos.am",
+      phone: "(92) 98816-7044"
     },
     {
       name: "Quiosques Pacco",
       tagline: "Sustentabilidade com Estilo",
-      description: "Revenda de produtos Pacco em locais estratégicos. Garrafas térmicas, copos e acessórios sustentáveis com design moderno e funcional.",
+      description: "4 quiosques estratégicos: Manauara Shopping e Amazonas Shopping. Garrafas térmicas, copos e acessórios sustentáveis com design moderno e funcional.",
       icon: Droplet,
       image: paccoImage,
       color: "accent",
-      features: ["Produtos Sustentáveis", "Alto Fluxo", "Design Premium"]
+      features: ["Produtos Sustentáveis", "Alto Fluxo", "Design Premium"],
+      website: null,
+      instagram: "https://instagram.com/paccomanauara",
+      instagram2: "https://instagram.com/paccoamazonasshopping",
+      phone: null
     },
     {
-      name: "Vita Verde",
+      name: "Vyta Verde",
       tagline: "Bem-Estar Premium",
       description: "Loja premium de suplementação e estilo de vida saudável. Produtos de alta qualidade, atendimento personalizado para público classe A/B.",
       icon: Leaf,
       image: vitaVerdeImage,
       color: "primary",
-      features: ["Classe A/B", "Alta Qualidade", "Naturalidade"]
+      features: ["Classe A/B", "Alta Qualidade", "Naturalidade"],
+      website: "https://vytaverde.com.br/",
+      instagram: "https://instagram.com/vytaverde",
+      phone: null
     }
   ];
 
@@ -88,12 +102,66 @@ const Brands = () => {
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   {brand.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {brand.features.map((feature, idx) => (
                     <Badge key={idx} variant="secondary" className="bg-muted">
                       {feature}
                     </Badge>
                   ))}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {brand.website && (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      asChild
+                      className="gap-2"
+                    >
+                      <a href={brand.website} target="_blank" rel="noopener noreferrer">
+                        <Globe className="h-4 w-4" />
+                        Website
+                      </a>
+                    </Button>
+                  )}
+                  {brand.instagram && (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      asChild
+                      className="gap-2"
+                    >
+                      <a href={brand.instagram} target="_blank" rel="noopener noreferrer">
+                        <Instagram className="h-4 w-4" />
+                        Instagram
+                      </a>
+                    </Button>
+                  )}
+                  {brand.instagram2 && (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      asChild
+                      className="gap-2"
+                    >
+                      <a href={brand.instagram2} target="_blank" rel="noopener noreferrer">
+                        <Instagram className="h-4 w-4" />
+                        Pacco Amazon
+                      </a>
+                    </Button>
+                  )}
+                  {brand.phone && (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      asChild
+                      className="gap-2"
+                    >
+                      <a href={`tel:${brand.phone.replace(/\D/g, '')}`}>
+                        <Phone className="h-4 w-4" />
+                        {brand.phone}
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
