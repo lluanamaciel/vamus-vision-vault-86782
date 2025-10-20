@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
+import { ArrowRight, TrendingUp } from "lucide-react";
+import heroBackground from "@/assets/hero-bg.jpg";
+import logoVamos from "@/assets/logo-vamos.png";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -9,43 +10,70 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Grupo VAMUS - Liderança em Saúde e Bem-Estar"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-primary/70" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-primary/30 to-black/80" />
       </div>
-
-      {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-            Grupo <span className="gradient-accent bg-clip-text text-transparent">VAMUS</span>
+      
+      <div className="relative z-10 container mx-auto px-4 py-20">
+        <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
+          <div className="mb-8 flex justify-center">
+            <img 
+              src={logoVamos} 
+              alt="Grupo VaMos" 
+              className="h-32 md:h-40 animate-scale-in drop-shadow-2xl"
+            />
+          </div>
+          
+          <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight tracking-tight">
+            Grupo VaMos
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
-            Promovendo uma vida plena e saudável através de um ecossistema completo de soluções essenciais
+          
+          <div className="flex items-center justify-center gap-3 text-accent">
+            <TrendingUp className="h-8 w-8" />
+            <h2 className="text-3xl md:text-5xl font-bold">
+              Transformando Vidas com Excelência
+            </h2>
+          </div>
+          
+          <p className="text-xl md:text-2xl text-gray-100 leading-relaxed font-light max-w-4xl mx-auto">
+            <span className="font-semibold text-accent">Inovação que inspira.</span> Diversificação estratégica que une performance esportiva, 
+            bem-estar premium e sustentabilidade em um ecossistema completo de soluções.
           </p>
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-12 max-w-3xl mx-auto">
-            Da alta performance esportiva ao bem-estar diário, oferecemos qualidade superior e acessibilidade para todos os públicos
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay">
-            <Button
-              variant="hero"
-              size="xl"
-              onClick={() => scrollToSection("marcas")}
-              className="group"
+          
+          <div className="flex flex-wrap justify-center gap-6 text-lg md:text-xl text-white/90 font-medium">
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              Liderança Regional
+            </span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              Expansão Nacional
+            </span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              Visão de Futuro
+            </span>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+            <Button 
+              size="lg" 
+              variant="cta"
+              onClick={() => scrollToSection('marcas')}
+              className="text-lg px-10 py-7 shadow-glow group"
             >
               Conheça Nossas Marcas
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button
-              variant="cta"
-              size="xl"
-              onClick={() => scrollToSection("contato")}
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={() => scrollToSection('contato')}
+              className="text-lg px-10 py-7 border-2 border-accent text-accent hover:bg-accent hover:text-white shadow-lg"
             >
               Seja Nosso Parceiro
             </Button>
@@ -53,8 +81,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Decorative Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-background" style={{ clipPath: "ellipse(100% 100% at 50% 100%)" }} />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/50 to-transparent" />
     </section>
   );
 };
