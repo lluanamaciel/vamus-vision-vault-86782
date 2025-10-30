@@ -9,41 +9,43 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-secondary text-secondary-foreground py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+    <footer className="bg-primary text-primary-foreground py-16 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--primary-light)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary-light)/0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Logo and Description */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 gradient-accent bg-clip-text text-transparent">
-              Grupo VaMos
+            <h3 className="text-4xl font-black mb-6">
+              Grupo <span className="text-accent">VaMos</span>
             </h3>
-            <p className="text-secondary-foreground/80 mb-4 max-w-md">
+            <p className="text-primary-foreground/90 mb-6 max-w-md leading-relaxed text-lg font-light">
               Promovendo uma vida plena e saudável através de um ecossistema completo de soluções em saúde, bem-estar e performance.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a href="#" className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center hover:bg-accent-light transition-elegant shadow-lg hover:scale-110">
+                <Facebook className="h-6 w-6 text-primary" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
-                <Instagram className="h-5 w-5" />
+              <a href="#" className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center hover:bg-accent-light transition-elegant shadow-lg hover:scale-110">
+                <Instagram className="h-6 w-6 text-primary" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
+              <a href="#" className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center hover:bg-accent-light transition-elegant shadow-lg hover:scale-110">
+                <Linkedin className="h-6 w-6 text-primary" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
-                <Mail className="h-5 w-5" />
+              <a href="#" className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center hover:bg-accent-light transition-elegant shadow-lg hover:scale-110">
+                <Mail className="h-6 w-6 text-primary" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Links Rápidos</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold text-xl mb-6 text-accent">Links Rápidos</h4>
+            <ul className="space-y-3">
               <li>
                 <button 
                   onClick={() => scrollToSection("sobre")}
-                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
                 >
                   Sobre Nós
                 </button>
@@ -51,7 +53,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection("marcas")}
-                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
                 >
                   Nossas Marcas
                 </button>
@@ -59,7 +61,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection("presenca")}
-                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
                 >
                   Presença
                 </button>
@@ -67,7 +69,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection("contato")}
-                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
                 >
                   Contato
                 </button>
@@ -77,14 +79,14 @@ const Footer = () => {
 
           {/* Brands */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Nossas Marcas</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold text-xl mb-6 text-accent">Nossas Marcas</h4>
+            <ul className="space-y-3">
               <li>
                 <a 
                   href="https://bodymonstersuplementos.com.br/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
                 >
                   Body Monster
                 </a>
@@ -94,18 +96,18 @@ const Footer = () => {
                   href="https://instagram.com/atacadaosuplementos.am" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
                 >
                   Atacadão Suplementos
                 </a>
               </li>
-              <li className="text-secondary-foreground/80">Quiosques Pacco</li>
+              <li className="text-primary-foreground/90 text-lg font-medium">Quiosques Pacco</li>
               <li>
                 <a 
                   href="https://vytaverde.com.br/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-secondary-foreground/80 hover:text-accent transition-colors"
+                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
                 >
                   Vyta Verde
                 </a>
@@ -114,12 +116,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-secondary-foreground/20 text-center">
-          <p className="text-secondary-foreground/60">
+        <div className="border-t border-primary-foreground/20 pt-10 text-center">
+          <p className="text-primary-foreground/90 font-semibold text-lg mb-2">
             © {currentYear} Grupo VaMos. Todos os direitos reservados.
           </p>
-          <p className="text-secondary-foreground/60 text-sm mt-2">
-            Transformando Vidas com Excelência • Manaus, Amazonas - Brasil
+          <p className="text-accent font-bold text-base">
+            Excelência que Transforma. Visão que Inspira. <span className="text-primary-foreground/80">Do Amazonas para o Brasil.</span>
           </p>
         </div>
       </div>

@@ -15,65 +15,68 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-primary/30 to-black/80" />
+        <div className="absolute inset-0 gradient-hero opacity-95" />
       </div>
       
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
-          <div className="mb-8 flex justify-center">
+      <div className="relative z-10 container mx-auto px-6 py-24 md:py-32">
+        <div className="max-w-6xl mx-auto text-center space-y-12 animate-fade-in">
+          <div className="mb-12 flex justify-center animate-float">
             <img 
               src={logoVamos} 
               alt="Grupo VaMos" 
-              className="h-32 md:h-40 animate-scale-in drop-shadow-2xl"
+              className="h-40 md:h-56 drop-shadow-[0_0_40px_rgba(230,180,34,0.4)] transition-elegant hover:scale-105"
             />
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight tracking-tight">
-            Grupo VaMos
-          </h1>
-          
-          <div className="flex items-center justify-center gap-3 text-accent">
-            <TrendingUp className="h-8 w-8" />
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Transformando Vidas com Excelência
+          <div className="space-y-6">
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter">
+              Grupo <span className="text-accent">VaMos</span>
+            </h1>
+            
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-px w-16 bg-gradient-to-r from-transparent via-accent to-transparent" />
+              <TrendingUp className="h-10 w-10 text-accent animate-pulse" />
+              <div className="h-px w-16 bg-gradient-to-r from-transparent via-accent to-transparent" />
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-bold text-white/95 tracking-wide">
+              Excelência que Transforma. <span className="text-secondary">Visão que Inspira.</span>
             </h2>
           </div>
           
-          <p className="text-xl md:text-2xl text-gray-100 leading-relaxed font-light max-w-4xl mx-auto">
-            <span className="font-semibold text-accent">Inovação que inspira.</span> Diversificação estratégica que une performance esportiva, 
-            bem-estar premium e sustentabilidade em um ecossistema completo de soluções.
+          <p className="text-xl md:text-3xl text-white/90 leading-relaxed font-light max-w-5xl mx-auto backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10">
+            Liderando o mercado amazônico com{" "}
+            <span className="font-bold text-accent">inovação estratégica</span>, unindo alta performance esportiva e bem-estar premium em um ecossistema completo de excelência.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-6 text-lg md:text-xl text-white/90 font-medium">
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              Liderança Regional
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              Expansão Nacional
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              Visão de Futuro
-            </span>
+          <div className="flex flex-wrap justify-center gap-8 text-lg md:text-xl text-white font-semibold">
+            <div className="flex flex-col items-center gap-3 backdrop-blur-sm bg-white/5 px-8 py-6 rounded-xl border border-white/10 transition-elegant hover:bg-white/10 hover:scale-105">
+              <div className="w-3 h-3 rounded-full bg-accent shadow-glow" />
+              <span>Liderança Regional</span>
+            </div>
+            <div className="flex flex-col items-center gap-3 backdrop-blur-sm bg-white/5 px-8 py-6 rounded-xl border border-white/10 transition-elegant hover:bg-white/10 hover:scale-105">
+              <div className="w-3 h-3 rounded-full bg-secondary shadow-glow-secondary" />
+              <span>5 Lojas + 4 Quiosques</span>
+            </div>
+            <div className="flex flex-col items-center gap-3 backdrop-blur-sm bg-white/5 px-8 py-6 rounded-xl border border-white/10 transition-elegant hover:bg-white/10 hover:scale-105">
+              <div className="w-3 h-3 rounded-full bg-accent shadow-glow" />
+              <span>Expansão Nacional</span>
+            </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-12">
             <Button 
               size="lg" 
-              variant="cta"
+              className="text-xl px-14 py-8 bg-accent hover:bg-accent-light text-primary font-bold shadow-glow transition-elegant hover:scale-105 hover:shadow-xl group"
               onClick={() => scrollToSection('marcas')}
-              className="text-lg px-10 py-7 shadow-glow group"
             >
               Conheça Nossas Marcas
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
             </Button>
             <Button 
               size="lg" 
-              variant="outline"
+              className="text-xl px-14 py-8 bg-white/10 hover:bg-white/20 text-white font-bold border-2 border-white/30 backdrop-blur-sm transition-elegant hover:scale-105"
               onClick={() => scrollToSection('contato')}
-              className="text-lg px-10 py-7 border-2 border-accent text-accent hover:bg-accent hover:text-white shadow-lg"
             >
               Seja Nosso Parceiro
             </Button>
@@ -81,7 +84,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent" />
     </section>
   );
 };

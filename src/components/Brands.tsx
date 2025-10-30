@@ -61,61 +61,67 @@ const Brands = () => {
   ];
 
   return (
-    <section id="marcas" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Nosso Ecossistema de Marcas
+    <section id="marcas" className="py-32 bg-gradient-to-b from-background via-primary/5 to-background relative">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)] opacity-20" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-block mb-6">
+            <span className="text-secondary font-bold text-lg tracking-widest uppercase">Portfólio Premium</span>
+          </div>
+          <h2 className="text-6xl md:text-7xl font-black mb-8">
+            Nosso <span className="text-primary">Ecossistema</span> de Marcas
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Diversificação estratégica que atende todos os públicos e necessidades do mercado de saúde e bem-estar
+          <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
+            Quatro marcas estratégicas, <span className="font-semibold text-foreground">um propósito comum</span>: transformar saúde e bem-estar em resultados extraordinários.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 max-w-7xl mx-auto">
           {brands.map((brand, index) => (
             <Card 
               key={index} 
-              className="overflow-hidden border-border shadow-lg hover:shadow-xl transition-smooth group animate-fade-in"
+              className="overflow-hidden border-2 hover:border-primary/30 shadow-xl hover:shadow-2xl transition-elegant group animate-fade-in backdrop-blur-sm bg-card/95"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={brand.image} 
                   alt={brand.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-elegant group-hover:scale-110"
                 />
-                <div className={`absolute inset-0 bg-${brand.color}/20 group-hover:bg-${brand.color}/10 transition-colors`} />
-                <div className="absolute top-4 left-4">
-                  <div className={`w-12 h-12 gradient-${brand.color} rounded-lg flex items-center justify-center shadow-lg`}>
-                    <brand.icon className="h-6 w-6 text-primary-foreground" />
+                <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/40 transition-colors`} />
+                <div className="absolute top-6 left-6">
+                  <div className={`w-16 h-16 gradient-${brand.color} rounded-xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-elegant`}>
+                    <brand.icon className="h-8 w-8 text-primary-foreground" />
                   </div>
                 </div>
               </div>
               
-              <CardHeader>
-                <CardTitle className="text-2xl text-foreground">{brand.name}</CardTitle>
-                <p className="text-sm font-semibold text-primary">{brand.tagline}</p>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-3xl text-foreground font-bold">{brand.name}</CardTitle>
+                <p className="text-base font-bold text-primary tracking-wide">{brand.tagline}</p>
               </CardHeader>
               
-              <CardContent>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+              <CardContent className="space-y-5">
+                <p className="text-muted-foreground leading-relaxed text-lg">
                   {brand.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2">
                   {brand.features.map((feature, idx) => (
-                    <Badge key={idx} variant="secondary" className="bg-muted">
+                    <Badge key={idx} variant="secondary" className="bg-muted/80 text-sm py-1.5 px-3 font-semibold">
                       {feature}
                     </Badge>
                   ))}
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                <div className="flex flex-wrap gap-3">
                   {brand.website && (
                     <Button 
                       variant="outline" 
                       size="sm" 
                       asChild
-                      className="gap-2"
+                      className="gap-2 hover:bg-primary hover:text-primary-foreground transition-elegant font-semibold"
                     >
                       <a href={brand.website} target="_blank" rel="noopener noreferrer">
                         <Globe className="h-4 w-4" />
@@ -128,7 +134,7 @@ const Brands = () => {
                       variant="outline" 
                       size="sm" 
                       asChild
-                      className="gap-2"
+                      className="gap-2 hover:bg-secondary hover:text-secondary-foreground transition-elegant font-semibold"
                     >
                       <a href={brand.instagram} target="_blank" rel="noopener noreferrer">
                         <Instagram className="h-4 w-4" />
@@ -141,7 +147,7 @@ const Brands = () => {
                       variant="outline" 
                       size="sm" 
                       asChild
-                      className="gap-2"
+                      className="gap-2 hover:bg-secondary hover:text-secondary-foreground transition-elegant font-semibold"
                     >
                       <a href={brand.instagram2} target="_blank" rel="noopener noreferrer">
                         <Instagram className="h-4 w-4" />
@@ -154,7 +160,7 @@ const Brands = () => {
                       variant="outline" 
                       size="sm" 
                       asChild
-                      className="gap-2"
+                      className="gap-2 hover:bg-accent hover:text-accent-foreground transition-elegant font-semibold"
                     >
                       <a href={`tel:${brand.phone.replace(/\D/g, '')}`}>
                         <Phone className="h-4 w-4" />
@@ -168,14 +174,14 @@ const Brands = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <Card className="max-w-4xl mx-auto border-primary/20 shadow-lg">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4 text-foreground">Sinergia e Crescimento</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Cada marca do grupo complementa as demais, criando um ecossistema integrado que oferece soluções completas. 
+        <div className="mt-20 text-center">
+          <Card className="max-w-5xl mx-auto border-2 border-primary/20 shadow-2xl backdrop-blur-sm bg-card/95">
+            <CardContent className="p-12">
+              <h3 className="text-3xl md:text-4xl font-black mb-6 text-foreground">Sinergia e Crescimento</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Cada marca do grupo complementa as demais, criando um <span className="font-bold text-foreground">ecossistema integrado</span> que oferece soluções completas. 
                 Da distribuição B2B ao varejo especializado, da performance esportiva ao bem-estar diário, nossa diversificação 
-                estratégica nos posiciona como líderes regionais com potencial de expansão nacional.
+                estratégica nos posiciona como <span className="font-bold text-primary">líderes regionais</span> com potencial de <span className="font-bold text-secondary">expansão nacional</span>.
               </p>
             </CardContent>
           </Card>

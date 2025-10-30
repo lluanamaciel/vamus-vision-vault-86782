@@ -9,96 +9,104 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 15% 15%;
+    --foreground: 220 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 15% 15%;
+    --card-foreground: 220 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 15%;
+    --popover-foreground: 220 20% 10%;
 
-    /* Emerald green for vitality and Amazon connection */
-    --primary: 158 64% 40%;
+    /* Deep navy blue for authority and trust */
+    --primary: 220 40% 20%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 158 64% 52%;
-    --primary-dark: 158 64% 28%;
+    --primary-light: 220 40% 30%;
+    --primary-dark: 220 40% 12%;
 
-    /* Deep blue for trust and corporate */
-    --secondary: 215 45% 25%;
+    /* Emerald green for vitality and growth */
+    --secondary: 158 60% 38%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 215 45% 35%;
+    --secondary-light: 158 60% 48%;
 
-    /* Gold accent for premium feel */
-    --accent: 43 74% 56%;
-    --accent-foreground: 210 15% 15%;
-    --accent-light: 43 74% 70%;
+    /* Premium gold for excellence */
+    --accent: 45 90% 55%;
+    --accent-foreground: 220 40% 12%;
+    --accent-light: 45 90% 65%;
+    --accent-dark: 45 80% 45%;
 
-    --muted: 210 15% 96%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 12% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 15% 90%;
-    --input: 210 15% 90%;
-    --ring: 158 64% 40%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 40% 20%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Gradient definitions */
-    --gradient-primary: linear-gradient(135deg, hsl(158 64% 40%) 0%, hsl(158 64% 52%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(215 45% 25%) 0%, hsl(215 45% 35%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(43 74% 56%) 0%, hsl(43 74% 70%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(158 64% 40%) 0%, hsl(215 45% 25%) 100%);
+    /* Premium gradient definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(220 40% 20%) 0%, hsl(220 40% 30%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(158 60% 38%) 0%, hsl(158 60% 48%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(45 90% 55%) 0%, hsl(45 90% 65%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 40% 12%) 0%, hsl(220 40% 20%) 50%, hsl(158 60% 25%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(220 40% 15%) 0%, hsl(45 90% 55% / 0.1) 50%, hsl(158 60% 30%) 100%);
     
-    /* Shadow definitions */
-    --shadow-sm: 0 2px 8px hsl(210 15% 15% / 0.05);
-    --shadow-md: 0 4px 16px hsl(210 15% 15% / 0.08);
-    --shadow-lg: 0 8px 32px hsl(210 15% 15% / 0.12);
-    --shadow-glow: 0 0 40px hsl(158 64% 52% / 0.15);
+    /* Sophisticated shadow definitions */
+    --shadow-sm: 0 2px 12px hsl(220 40% 12% / 0.08);
+    --shadow-md: 0 8px 24px hsl(220 40% 12% / 0.12);
+    --shadow-lg: 0 16px 48px hsl(220 40% 12% / 0.16);
+    --shadow-xl: 0 24px 64px hsl(220 40% 12% / 0.24);
+    --shadow-glow: 0 0 48px hsl(45 90% 55% / 0.2);
+    --shadow-glow-secondary: 0 0 40px hsl(158 60% 48% / 0.15);
 
     /* Animation timings */
     --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elegant: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .dark {
-    --background: 210 20% 8%;
+    --background: 220 25% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 210 20% 12%;
+    --card: 220 25% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 210 20% 12%;
+    --popover: 220 25% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 158 64% 52%;
+    --primary: 220 40% 25%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 158 64% 62%;
-    --primary-dark: 158 64% 38%;
+    --primary-light: 220 40% 35%;
+    --primary-dark: 220 40% 15%;
 
-    --secondary: 215 45% 35%;
+    --secondary: 158 60% 45%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 215 45% 45%;
+    --secondary-light: 158 60% 55%;
 
-    --accent: 43 74% 56%;
-    --accent-foreground: 210 20% 8%;
-    --accent-light: 43 74% 70%;
+    --accent: 45 90% 60%;
+    --accent-foreground: 220 25% 8%;
+    --accent-light: 45 90% 70%;
+    --accent-dark: 45 80% 50%;
 
-    --muted: 210 20% 16%;
-    --muted-foreground: 210 10% 65%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 12% 65%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 20%;
-    --input: 210 20% 20%;
-    --ring: 158 64% 52%;
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
+    --ring: 45 90% 60%;
 
-    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.3);
-    --shadow-md: 0 4px 16px hsl(0 0% 0% / 0.4);
-    --shadow-lg: 0 8px 32px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(158 64% 52% / 0.25);
+    --shadow-sm: 0 2px 12px hsl(0 0% 0% / 0.4);
+    --shadow-md: 0 8px 24px hsl(0 0% 0% / 0.5);
+    --shadow-lg: 0 16px 48px hsl(0 0% 0% / 0.6);
+    --shadow-xl: 0 24px 64px hsl(0 0% 0% / 0.7);
+    --shadow-glow: 0 0 48px hsl(45 90% 60% / 0.3);
+    --shadow-glow-secondary: 0 0 40px hsl(158 60% 55% / 0.25);
   }
 }
 
@@ -133,8 +141,16 @@ All colors MUST be HSL.
     background: var(--gradient-hero);
   }
 
+  .gradient-premium {
+    background: var(--gradient-premium);
+  }
+
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-glow-secondary {
+    box-shadow: var(--shadow-glow-secondary);
   }
 
   .transition-base {
@@ -143,6 +159,10 @@ All colors MUST be HSL.
 
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+
+  .transition-elegant {
+    transition: var(--transition-elegant);
   }
 
   @keyframes scale-in {
@@ -158,5 +178,18 @@ All colors MUST be HSL.
 
   .animate-scale-in {
     animation: scale-in 0.6s ease-out;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
 }
