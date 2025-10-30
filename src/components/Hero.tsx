@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
-import logoVamos from "@/assets/logo-vamos.png";
+import logoVamus from "@/assets/logo-vamus.png";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -22,15 +22,15 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto text-center space-y-12 animate-fade-in">
           <div className="mb-12 flex justify-center animate-float">
             <img 
-              src={logoVamos} 
-              alt="Grupo VaMos" 
+              src={logoVamus} 
+              alt="Grupo VAMUS" 
               className="h-40 md:h-56 drop-shadow-[0_0_40px_rgba(230,180,34,0.4)] transition-elegant hover:scale-105"
             />
           </div>
           
           <div className="space-y-6">
             <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter">
-              Grupo <span className="text-accent">VaMos</span>
+              Grupo <span className="text-accent">VAMUS</span>
             </h1>
             
             <div className="flex items-center justify-center gap-4">

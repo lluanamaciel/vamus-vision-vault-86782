@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <h3 className="text-4xl font-black mb-6">
-              Grupo <span className="text-accent">VaMos</span>
+              Grupo <span className="text-accent">VAMUS</span>
             </h3>
             <p className="text-primary-foreground/90 mb-6 max-w-md leading-relaxed text-lg font-light">
               Promovendo uma vida plena e saudável através de um ecossistema completo de soluções em saúde, bem-estar e performance.
@@ -118,7 +118,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 pt-10 text-center">
           <p className="text-primary-foreground/90 font-semibold text-lg mb-2">
-            © {currentYear} Grupo VaMos. Todos os direitos reservados.
+            © {currentYear} Grupo VAMUS. Todos os direitos reservados.
           </p>
           <p className="text-accent font-bold text-base">
             Excelência que Transforma. Visão que Inspira. <span className="text-primary-foreground/80">Do Amazonas para o Brasil.</span>

@@ -35,7 +35,7 @@ const About = () => {
               <span className="text-accent font-bold text-lg tracking-widest uppercase">Quem Somos</span>
             </div>
             <h2 className="text-6xl md:text-7xl font-black mb-8 text-foreground">
-              Sobre o Grupo <span className="text-primary">VaMos</span>
+              Sobre o Grupo <span className="text-primary">VAMUS</span>
             </h2>
             <div className="max-w-4xl mx-auto space-y-4">
               <p className="text-2xl md:text-3xl text-foreground/90 font-light leading-relaxed">
@@ -73,7 +73,7 @@ const About = () => {
         <Card className="max-w-6xl mx-auto border-2 border-accent/30 shadow-2xl bg-gradient-to-br from-card to-accent/5 backdrop-blur-sm">
           <CardContent className="p-12 text-center">
             <h3 className="text-4xl md:text-5xl font-black mb-10 text-foreground">
-              Por Que o Grupo <span className="text-primary">VaMos</span>?
+              Por Que o Grupo <span className="text-primary">VAMUS</span>?
             </h3>
             <div className="grid md:grid-cols-2 gap-10 text-left">
               <div className="space-y-6">
