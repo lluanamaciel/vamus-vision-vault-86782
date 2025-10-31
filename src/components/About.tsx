@@ -12,8 +12,8 @@ const About = () => {
     {
       icon: Eye,
       title: "Visão",
-      description: "Ser o grupo empresarial líder no Amazonas e referência nacional em inovação, confiança e excelência em saúde e bem-estar.",
-      quote: "\"Do Norte para o Brasil. Do hoje para o amanhã.\""
+      description: "Ser referência nacional em inovação, excelência e confiança no mercado de saúde e bem-estar, expandindo nosso ecossistema integrado de marcas para todo o Brasil.",
+      quote: "\"Crescimento sustentável. Impacto duradouro.\""
     },
     {
       icon: Heart,

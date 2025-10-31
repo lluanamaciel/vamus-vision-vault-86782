@@ -101,7 +101,9 @@ const Footer = () => {
                   Atacadão Suplementos
                 </a>
               </li>
-              <li className="text-primary-foreground/90 text-lg font-medium">Quiosques Pacco</li>
+              <li className="text-primary-foreground/90 text-lg font-medium">FIT ONE Nutrition</li>
+              <li className="text-primary-foreground/90 text-lg font-medium">Body Fit Closet</li>
+              <li className="text-primary-foreground/90 text-lg font-medium">PACCO</li>
               <li>
                 <a 
                   href="https://vytaverde.com.br/" 
@@ -121,7 +123,7 @@ const Footer = () => {
             © {currentYear} Grupo VAMUS. Todos os direitos reservados.
           </p>
           <p className="text-accent font-bold text-base">
-            Excelência que Transforma. Visão que Inspira. <span className="text-primary-foreground/80">Do Amazonas para o Brasil.</span>
+            Liderança. Inovação. Crescimento Sustentável.
           </p>
         </div>
       </div>

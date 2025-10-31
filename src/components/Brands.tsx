@@ -1,46 +1,72 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Dumbbell, Package, Droplet, Leaf, Globe, Instagram, Phone } from "lucide-react";
+import { Dumbbell, Package, Droplet, Leaf, Flame, Shirt, Globe, Instagram, Phone } from "lucide-react";
 import bodyMonsterImage from "@/assets/body-monster.jpg";
 import atacadaoImage from "@/assets/atacadao.jpg";
 import paccoImage from "@/assets/pacco.jpg";
 import vitaVerdeImage from "@/assets/vita-verde.jpg";
+import fitOneImage from "@/assets/fit-one.jpg";
+import bodyFitClosetImage from "@/assets/body-fit-closet.jpg";
 
 const Brands = () => {
   const brands = [
     {
       name: "Body Monster Suplementos",
       tagline: "Performance e Resultados",
-      description: "Venda de suplementos de alta qualidade para atletas e entusiastas de fitness. Preços justos, entrega em toda Manaus, e atendimento personalizado.",
+      description: "Varejo especializado em suplementação esportiva de alta performance. Atendimento consultivo, produtos premium e entrega ágil para atletas e entusiastas fitness.",
       icon: Dumbbell,
       image: bodyMonsterImage,
       color: "primary",
-      features: ["Atletas e Fitness", "Entrega Rápida", "Preços Competitivos"],
+      features: ["Varejo Especializado", "Atendimento Consultivo", "Alta Performance"],
       website: "https://bodymonstersuplementos.com.br/",
       instagram: "https://instagram.com/bodymonstersuplementos",
       phone: null
     },
     {
       name: "Atacadão Suplementos",
-      tagline: "Maior Distribuidor do Norte",
-      description: "Distribuição B2B de suplementação esportiva para varejistas. Mais de 20 marcas, entrega em todo o Amazonas, produtos originais com nota fiscal.",
+      tagline: "Distribuição B2B de Excelência",
+      description: "Distribuidor atacadista líder em suplementação esportiva. Portfolio com mais de 20 marcas reconhecidas, logística eficiente e parcerias estratégicas com varejistas.",
       icon: Package,
       image: atacadaoImage,
       color: "secondary",
-      features: ["B2B Distribuição", "+20 Marcas", "Todo Amazonas"],
+      features: ["B2B Distribuição", "+20 Marcas Premium", "Logística Integrada"],
       website: null,
       instagram: "https://instagram.com/atacadaosuplementos.am",
       phone: "(92) 98816-7044"
     },
     {
-      name: "Quiosques Pacco",
-      tagline: "Sustentabilidade com Estilo",
-      description: "4 quiosques estratégicos: Manauara Shopping e Amazonas Shopping. Garrafas térmicas, copos e acessórios sustentáveis com design moderno e funcional.",
+      name: "FIT ONE Nutrition",
+      tagline: "Suplementação Inteligente",
+      description: "Marca própria de suplementação esportiva com foco em qualidade, eficácia e inovação. Produtos desenvolvidos com os mais altos padrões da indústria.",
+      icon: Flame,
+      image: fitOneImage,
+      color: "accent",
+      features: ["Marca Própria", "Qualidade Premium", "Inovação Científica"],
+      website: null,
+      instagram: null,
+      phone: null
+    },
+    {
+      name: "Body Fit Closet",
+      tagline: "Moda Fitness & Performance",
+      description: "Varejo especializado em roupas e acessórios esportivos. Estilo, conforto e tecnologia para quem busca performance e elegância no treino e no dia a dia.",
+      icon: Shirt,
+      image: bodyFitClosetImage,
+      color: "primary",
+      features: ["Moda Esportiva", "Tecnologia Têxtil", "Estilo Premium"],
+      website: null,
+      instagram: null,
+      phone: null
+    },
+    {
+      name: "PACCO",
+      tagline: "Sustentabilidade & Design",
+      description: "Linha de produtos sustentáveis premium. Garrafas térmicas, copos e acessórios com design contemporâneo e funcionalidade superior para um estilo de vida consciente.",
       icon: Droplet,
       image: paccoImage,
-      color: "accent",
-      features: ["Produtos Sustentáveis", "Alto Fluxo", "Design Premium"],
+      color: "secondary",
+      features: ["Sustentabilidade", "Design Premium", "Lifestyle Consciente"],
       website: null,
       instagram: "https://instagram.com/paccomanauara",
       instagram2: "https://instagram.com/paccoamazonasshopping",
@@ -48,12 +74,12 @@ const Brands = () => {
     },
     {
       name: "Vyta Verde",
-      tagline: "Bem-Estar Premium",
-      description: "Loja premium de suplementação e estilo de vida saudável. Produtos de alta qualidade, atendimento personalizado para público classe A/B.",
+      tagline: "Bem-Estar Holístico",
+      description: "Varejo premium focado em bem-estar integral e estilo de vida saudável. Produtos naturais de alta qualidade, atendimento personalizado e experiência diferenciada.",
       icon: Leaf,
       image: vitaVerdeImage,
-      color: "primary",
-      features: ["Classe A/B", "Alta Qualidade", "Naturalidade"],
+      color: "accent",
+      features: ["Bem-Estar Integral", "Produtos Naturais", "Experiência Premium"],
       website: "https://vytaverde.com.br/",
       instagram: "https://instagram.com/vytaverde",
       phone: null
@@ -70,14 +96,14 @@ const Brands = () => {
             <span className="text-secondary font-bold text-lg tracking-widest uppercase">Portfólio Premium</span>
           </div>
           <h2 className="text-6xl md:text-7xl font-black mb-8">
-            Nosso <span className="text-primary">Ecossistema</span> de Marcas
+            Portfolio <span className="text-primary">Estratégico</span> de Marcas
           </h2>
           <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
-            Quatro marcas estratégicas, <span className="font-semibold text-foreground">um propósito comum</span>: transformar saúde e bem-estar em resultados extraordinários.
+            Seis marcas integradas, <span className="font-semibold text-foreground">um propósito unificado</span>: liderar a transformação do mercado de saúde, bem-estar e performance com excelência operacional.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {brands.map((brand, index) => (
             <Card 
               key={index} 
@@ -177,11 +203,11 @@ const Brands = () => {
         <div className="mt-20 text-center">
           <Card className="max-w-5xl mx-auto border-2 border-primary/20 shadow-2xl backdrop-blur-sm bg-card/95">
             <CardContent className="p-12">
-              <h3 className="text-3xl md:text-4xl font-black mb-6 text-foreground">Sinergia e Crescimento</h3>
+              <h3 className="text-3xl md:text-4xl font-black mb-6 text-foreground">Ecossistema Integrado de Valor</h3>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Cada marca do grupo complementa as demais, criando um <span className="font-bold text-foreground">ecossistema integrado</span> que oferece soluções completas. 
-                Da distribuição B2B ao varejo especializado, da performance esportiva ao bem-estar diário, nossa diversificação 
-                estratégica nos posiciona como <span className="font-bold text-primary">líderes regionais</span> com potencial de <span className="font-bold text-secondary">expansão nacional</span>.
+                Cada marca do portfólio VAMUS complementa as demais de forma estratégica, criando um <span className="font-bold text-foreground">ecossistema integrado</span> que maximiza sinergias operacionais e comerciais. 
+                Da distribuição atacadista ao varejo especializado, da marca própria ao lifestyle premium, nossa arquitetura diversificada 
+                nos posiciona para <span className="font-bold text-primary">liderança de mercado</span> e <span className="font-bold text-secondary">crescimento sustentável em escala nacional</span>.
               </p>
             </CardContent>
           </Card>

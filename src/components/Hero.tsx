@@ -40,27 +40,27 @@ const Hero = () => {
             </div>
             
             <h2 className="text-3xl md:text-5xl font-bold text-white/95 tracking-wide">
-              Excelência que Transforma. <span className="text-secondary">Visão que Inspira.</span>
+              Liderança. Inovação. <span className="text-secondary">Crescimento Sustentável.</span>
             </h2>
           </div>
           
           <p className="text-xl md:text-3xl text-white/90 leading-relaxed font-light max-w-5xl mx-auto backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10">
-            Liderando o mercado amazônico com{" "}
-            <span className="font-bold text-accent">inovação estratégica</span>, unindo alta performance esportiva e bem-estar premium em um ecossistema completo de excelência.
+            Grupo empresarial consolidado com{" "}
+            <span className="font-bold text-accent">ecossistema integrado</span> de 6 marcas estratégicas, unindo distribuição, varejo especializado e lifestyle premium para liderar o mercado de saúde e bem-estar.
           </p>
           
           <div className="flex flex-wrap justify-center gap-8 text-lg md:text-xl text-white font-semibold">
             <div className="flex flex-col items-center gap-3 backdrop-blur-sm bg-white/5 px-8 py-6 rounded-xl border border-white/10 transition-elegant hover:bg-white/10 hover:scale-105">
               <div className="w-3 h-3 rounded-full bg-accent shadow-glow" />
-              <span>Liderança Regional</span>
+              <span>6 Marcas Integradas</span>
             </div>
             <div className="flex flex-col items-center gap-3 backdrop-blur-sm bg-white/5 px-8 py-6 rounded-xl border border-white/10 transition-elegant hover:bg-white/10 hover:scale-105">
               <div className="w-3 h-3 rounded-full bg-secondary shadow-glow-secondary" />
-              <span>5 Lojas + 4 Quiosques</span>
+              <span>9 Lojas Estratégicas</span>
             </div>
             <div className="flex flex-col items-center gap-3 backdrop-blur-sm bg-white/5 px-8 py-6 rounded-xl border border-white/10 transition-elegant hover:bg-white/10 hover:scale-105">
               <div className="w-3 h-3 rounded-full bg-accent shadow-glow" />
-              <span>Expansão Nacional</span>
+              <span>Crescimento Acelerado</span>
             </div>
           </div>
           
