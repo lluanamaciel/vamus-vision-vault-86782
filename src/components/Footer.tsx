@@ -81,39 +81,12 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-xl mb-6 text-accent">Nossas Marcas</h4>
             <ul className="space-y-3">
-              <li>
-                <a 
-                  href="https://bodymonstersuplementos.com.br/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
-                >
-                  Body Monster
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://instagram.com/atacadaosuplementos.am" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
-                >
-                  Atacadão Suplementos
-                </a>
-              </li>
-              <li className="text-primary-foreground/90 text-lg font-medium">FIT ONE Nutrition</li>
-              <li className="text-primary-foreground/90 text-lg font-medium">Body Fit Closet</li>
-              <li className="text-primary-foreground/90 text-lg font-medium">PACCO</li>
-              <li>
-                <a 
-                  href="https://vytaverde.com.br/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium"
-                >
-                  Vyta Verde
-                </a>
-              </li>
+              <li><a href="/marcas/body-monster" className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium">Body Monster</a></li>
+              <li><a href="/marcas/atacadao" className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium">Atacadão Body Monster</a></li>
+              <li><a href="/marcas/fit-one" className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium">FIT ONE Nutrition</a></li>
+              <li><a href="/marcas/body-fit-closet" className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium">Body Fit Closet</a></li>
+              <li><a href="/marcas/pacco" className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium">PACCO</a></li>
+              <li><a href="/marcas/vyta-verde" className="text-primary-foreground/90 hover:text-accent transition-elegant text-lg font-medium">Vyta Verde</a></li>
             </ul>
           </div>
         </div>
