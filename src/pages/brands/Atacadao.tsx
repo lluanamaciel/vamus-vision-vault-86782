@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Package, DollarSign, Truck, ArrowRight } from "lucide-react";
+import { Package, DollarSign, Truck, ArrowRight, Phone } from "lucide-react";
 import atacadaoImage from "@/assets/atacadao.jpg";
 
 const Atacadao = () => {
@@ -120,9 +120,17 @@ const Atacadao = () => {
                 <p className="text-xl text-primary-foreground/90 mb-8">
                   Entre em contato e receba uma proposta personalizada para suas necessidades.
                 </p>
-                <Button variant="cta" size="lg">
-                  Falar com Consultor
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button variant="cta" size="lg">
+                    Falar com Consultor
+                  </Button>
+                  <Button variant="cta" size="lg" asChild>
+                    <a href="tel:+5592993879039">
+                      <Phone className="mr-2 h-5 w-5" />
+                      (92) 99387-9039
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>

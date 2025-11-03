@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Award, TrendingUp, Users, ArrowRight } from "lucide-react";
+import { Award, TrendingUp, Users, ArrowRight, Phone } from "lucide-react";
 import bodyMonsterImage from "@/assets/body-monster.jpg";
 
 const BodyMonster = () => {
@@ -105,9 +105,17 @@ const BodyMonster = () => {
                   Encontre a loja Body Monster mais próxima e receba atendimento 
                   personalizado de nossa equipe especializada.
                 </p>
-                <Button variant="cta" size="lg">
-                  Localizar Loja
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button variant="cta" size="lg">
+                    Localizar Loja
+                  </Button>
+                  <Button variant="cta" size="lg" asChild>
+                    <a href="tel:+559298158-6710">
+                      <Phone className="mr-2 h-5 w-5" />
+                      (92) 98158-6710
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>

@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Utensils, Clock, ShoppingBag, ArrowRight } from "lucide-react";
+import { Utensils, Clock, ShoppingBag, ArrowRight, Phone } from "lucide-react";
 import paccoImage from "@/assets/pacco.jpg";
 
 const Pacco = () => {
@@ -174,9 +174,17 @@ const Pacco = () => {
                 <p className="text-xl text-primary-foreground/90 mb-8">
                   Disponível em pontos estratégicos e nas principais lojas do Grupo VAMUS.
                 </p>
-                <Button variant="cta" size="lg">
-                  Ver Localizações
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button variant="cta" size="lg">
+                    Ver Localizações
+                  </Button>
+                  <Button variant="cta" size="lg" asChild>
+                    <a href="tel:+559299443-1921">
+                      <Phone className="mr-2 h-5 w-5" />
+                      (92) 99443-1921
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
