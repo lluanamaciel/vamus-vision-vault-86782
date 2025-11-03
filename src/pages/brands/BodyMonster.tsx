@@ -110,7 +110,7 @@ const BodyMonster = () => {
                     Localizar Loja
                   </Button>
                   <Button variant="cta" size="lg" asChild>
-                    <a href="tel:+559298158-6710">
+                    <a href="tel:+5592981586710">
                       <Phone className="mr-2 h-5 w-5" />
                       (92) 98158-6710
                     </a>

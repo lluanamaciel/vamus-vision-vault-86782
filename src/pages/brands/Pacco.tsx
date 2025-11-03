@@ -179,7 +179,7 @@ const Pacco = () => {
                     Ver Localizações
                   </Button>
                   <Button variant="cta" size="lg" asChild>
-                    <a href="tel:+559299443-1921">
+                    <a href="tel:+5592994431921">
                       <Phone className="mr-2 h-5 w-5" />
                       (92) 99443-1921
                     </a>
