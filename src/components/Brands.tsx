@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Dumbbell, Package, Droplet, Leaf, Flame, Shirt, Globe, Instagram, Phone } from "lucide-react";
+import { Dumbbell, Package, Droplet, Leaf, Flame, Shirt, Globe, Instagram, MessageCircle } from "lucide-react";
 import bodyMonsterImage from "@/assets/body-monster.jpg";
 import atacadaoImage from "@/assets/atacadao.jpg";
 import paccoImage from "@/assets/pacco.jpg";
@@ -21,7 +21,8 @@ const Brands = () => {
       features: ["Varejo Especializado", "Atendimento Consultivo", "Alta Performance"],
       website: "https://bodymonstersuplementos.com.br/",
       instagram: "https://instagram.com/bodymonstersuplementos",
-      phone: null
+      whatsapp: "5592981586710",
+      whatsappDisplay: "(92) 98158-6710"
     },
     {
       name: "Atacadão Suplementos",
@@ -33,7 +34,8 @@ const Brands = () => {
       features: ["B2B Distribuição", "+20 Marcas Premium", "Logística Integrada"],
       website: null,
       instagram: "https://instagram.com/atacadaosuplementos.am",
-      phone: "(92) 98816-7044"
+      whatsapp: "5592993879039",
+      whatsappDisplay: "(92) 99387-9039"
     },
     {
       name: "FIT ONE Nutrition",
@@ -45,7 +47,8 @@ const Brands = () => {
       features: ["Marca Própria", "Qualidade Premium", "Inovação Científica"],
       website: null,
       instagram: null,
-      phone: null
+      whatsapp: null,
+      whatsappDisplay: null
     },
     {
       name: "Body Fit Closet",
@@ -57,7 +60,8 @@ const Brands = () => {
       features: ["Moda Esportiva", "Tecnologia Têxtil", "Estilo Premium"],
       website: null,
       instagram: null,
-      phone: null
+      whatsapp: null,
+      whatsappDisplay: null
     },
     {
       name: "PACCO",
@@ -70,7 +74,8 @@ const Brands = () => {
       website: null,
       instagram: "https://instagram.com/paccomanauara",
       instagram2: "https://instagram.com/paccoamazonasshopping",
-      phone: null
+      whatsapp: "5592994431921",
+      whatsappDisplay: "(92) 99443-1921"
     },
     {
       name: "Vyta Verde",
@@ -82,7 +87,8 @@ const Brands = () => {
       features: ["Bem-Estar Integral", "Produtos Naturais", "Experiência Premium"],
       website: "https://vytaverde.com.br/",
       instagram: "https://instagram.com/vytaverde",
-      phone: null
+      whatsapp: null,
+      whatsappDisplay: null
     }
   ];
 
@@ -186,16 +192,16 @@ const Brands = () => {
                       </a>
                     </Button>
                   )}
-                  {brand.phone && (
+                  {brand.whatsapp && (
                     <Button 
                       variant="outline" 
                       size="sm" 
                       asChild
-                      className="gap-2 hover:bg-accent hover:text-accent-foreground transition-elegant font-semibold"
+                      className="gap-2 hover:bg-green-600 hover:text-white transition-elegant font-semibold"
                     >
-                      <a href={`tel:${brand.phone.replace(/\D/g, '')}`}>
-                        <Phone className="h-4 w-4" />
-                        {brand.phone}
+                      <a href={`https://wa.me/${brand.whatsapp}`} target="_blank" rel="noopener noreferrer">
+                        <MessageCircle className="h-4 w-4" />
+                        {brand.whatsappDisplay}
                       </a>
                     </Button>
                   )}
