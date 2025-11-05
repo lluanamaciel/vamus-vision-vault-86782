@@ -10,8 +10,13 @@ const Presence = () => {
   ];
 
   return (
-    <section id="presenca" className="py-20 gradient-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4">
+    <section id="presenca" className="py-20 gradient-secondary text-secondary-foreground relative overflow-hidden">
+      {/* Dynamic background patterns */}
+      <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-40 animate-grid-flow" />
+      <div className="absolute top-20 right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-blob" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -26,11 +31,11 @@ const Presence = () => {
             {stats.map((stat, index) => (
               <Card 
                 key={index} 
-                className="bg-background/10 backdrop-blur-sm border-secondary-foreground/20 shadow-lg hover:shadow-xl transition-smooth hover:scale-105 animate-fade-in"
+                className="bg-background/10 backdrop-blur-sm border-secondary-foreground/20 shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:-translate-y-2 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-background/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-background/20 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <stat.icon className="h-8 w-8 text-accent" />
                   </div>
                   <div className="text-3xl font-bold mb-2 text-accent">{stat.value}</div>

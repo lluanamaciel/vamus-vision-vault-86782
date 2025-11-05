@@ -69,12 +69,12 @@ const Navigation = () => {
             </NavigationMenu>
 
             <Link
-              to="/investidores"
+              to="/parceiros"
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive("/investidores") ? "text-primary" : "text-muted-foreground"
+                isActive("/parceiros") ? "text-primary" : "text-muted-foreground"
               }`}
             >
-              Investidores
+              Parceiros
             </Link>
             <Link
               to="/lideranca"
@@ -136,8 +136,8 @@ const Navigation = () => {
                 </Link>
               ))}
             </div>
-            <Link to="/investidores" className="block text-sm font-medium" onClick={() => setIsOpen(false)}>
-              Investidores
+            <Link to="/parceiros" className="block text-sm font-medium" onClick={() => setIsOpen(false)}>
+              Parceiros
             </Link>
             <Link to="/lideranca" className="block text-sm font-medium" onClick={() => setIsOpen(false)}>
               Liderança

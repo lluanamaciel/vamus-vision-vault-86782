@@ -26,8 +26,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contato" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="contato" className="py-20 bg-muted/30 relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,hsl(var(--primary)/0.05),transparent_50%)] animate-pulse-slow" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,hsl(var(--accent)/0.05),transparent_50%)] animate-pulse-slower" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
@@ -41,7 +45,7 @@ const Contact = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Contact Form */}
-            <Card className="border-border shadow-lg">
+            <Card className="border-border shadow-lg hover:shadow-xl transition-all animate-fade-in">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 text-foreground">Fale Conosco</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -99,10 +103,10 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <Card className="border-primary/20 shadow-lg hover:shadow-xl transition-smooth">
+              <Card className="border-primary/20 shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:-translate-y-1 animate-fade-in">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
                       <Mail className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <div>
@@ -114,10 +118,10 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-secondary/20 shadow-lg hover:shadow-xl transition-smooth">
+              <Card className="border-secondary/20 shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 gradient-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 gradient-secondary rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
                       <Phone className="h-6 w-6 text-secondary-foreground" />
                     </div>
                     <div>
@@ -129,10 +133,10 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-accent/20 shadow-lg hover:shadow-xl transition-smooth">
+              <Card className="border-accent/20 shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 gradient-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 gradient-accent rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
                       <MapPin className="h-6 w-6 text-accent-foreground" />
                     </div>
                     <div>
@@ -144,7 +148,7 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="gradient-hero border-0 shadow-lg">
+              <Card className="gradient-hero border-0 shadow-lg hover:shadow-xl transition-all hover:scale-105 animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <CardContent className="p-6 text-center">
                   <h4 className="font-semibold text-xl mb-2 text-primary-foreground">Oportunidades</h4>
                   <p className="text-primary-foreground/90 mb-4">

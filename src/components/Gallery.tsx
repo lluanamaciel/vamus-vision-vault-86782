@@ -48,8 +48,12 @@ const Gallery = () => {
   };
 
   return (
-    <section id="galeria" className="py-20 bg-gradient-to-b from-background to-secondary/10">
-      <div className="container mx-auto px-4">
+    <section id="galeria" className="py-20 bg-gradient-to-b from-background to-secondary/10 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-slow" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse-slower" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Nossa Jornada em Imagens
@@ -62,13 +66,13 @@ const Gallery = () => {
         <div className="max-w-6xl mx-auto">
           <Card className="overflow-hidden border-2 border-primary/20 shadow-2xl">
             <CardContent className="p-0 relative">
-              <div className="relative h-[500px] md:h-[600px]">
+              <div className="relative h-[500px] md:h-[600px] group">
                 <img 
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-500 group-hover:from-black/60" />
                 
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                   <h3 className="text-3xl md:text-4xl font-bold mb-2 animate-fade-in">
@@ -82,7 +86,7 @@ const Gallery = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all hover:scale-110"
                   onClick={prevSlide}
                 >
                   <ChevronLeft className="h-6 w-6 text-white" />
@@ -91,7 +95,7 @@ const Gallery = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all hover:scale-110"
                   onClick={nextSlide}
                 >
                   <ChevronRight className="h-6 w-6 text-white" />

@@ -12,10 +12,18 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-ken-burns"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
         <div className="absolute inset-0 gradient-hero opacity-95" />
+      </div>
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent/30 rounded-full animate-float-slow" />
+        <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-secondary/20 rounded-full animate-float-slower" />
+        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-accent/40 rounded-full animate-float" />
+        <div className="absolute bottom-1/4 right-1/3 w-3 h-3 bg-secondary/30 rounded-full animate-float-slow" />
       </div>
       
       <div className="relative z-10 container mx-auto px-6 py-24 md:py-32">
