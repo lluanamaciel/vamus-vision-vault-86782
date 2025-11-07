@@ -115,30 +115,41 @@ const Brands = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          {brands.map((brand, index) => (
-            <Card 
-              key={index} 
-              className="overflow-hidden border-2 hover:border-primary/30 shadow-xl hover:shadow-2xl transition-elegant group animate-fade-in backdrop-blur-sm bg-card/95"
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={brand.image} 
-                  alt={brand.name}
-                  className="w-full h-full object-cover transition-elegant group-hover:scale-110"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/40 transition-colors`} />
-                <div className="absolute top-6 left-6">
-                  <div className={`w-16 h-16 gradient-${brand.color} rounded-xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-elegant`}>
-                    <brand.icon className="h-8 w-8 text-primary-foreground" />
+          {brands.map((brand, index) => {
+            const isAnchorBrand = index === 0; // Body Monster é a marca âncora
+            
+            return (
+              <Card 
+                key={index} 
+                className={`overflow-hidden ${isAnchorBrand ? 'border-4 border-accent shadow-2xl ring-2 ring-accent/20' : 'border-2 hover:border-primary/30 shadow-xl'} hover:shadow-2xl transition-elegant group animate-fade-in backdrop-blur-sm bg-card/95`}
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
+                {isAnchorBrand && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <Badge className="bg-accent text-accent-foreground font-bold px-4 py-1.5 text-xs shadow-lg">
+                      ⭐ Marca Âncora
+                    </Badge>
+                  </div>
+                )}
+                
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={brand.image} 
+                    alt={brand.name}
+                    className="w-full h-full object-cover transition-elegant group-hover:scale-110"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/40 transition-colors`} />
+                  <div className="absolute top-6 left-6">
+                    <div className={`w-16 h-16 gradient-${brand.color} rounded-xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-elegant ${isAnchorBrand ? 'ring-2 ring-accent' : ''}`}>
+                      <brand.icon className="h-8 w-8 text-primary-foreground" />
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <CardHeader className="pb-4">
-                <CardTitle className="text-3xl text-foreground font-bold">{brand.name}</CardTitle>
-                <p className="text-base font-bold text-primary tracking-wide">{brand.tagline}</p>
-              </CardHeader>
+                
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-3xl text-foreground font-bold">{brand.name}</CardTitle>
+                  <p className="text-base font-bold text-primary tracking-wide">{brand.tagline}</p>
+                </CardHeader>
               
               <CardContent className="space-y-5">
                 <p className="text-muted-foreground leading-relaxed text-lg">
@@ -208,7 +219,8 @@ const Brands = () => {
                 </div>
               </CardContent>
             </Card>
-          ))}
+          );
+        })}
         </div>
 
         <div className="mt-20 text-center">
