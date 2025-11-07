@@ -4,12 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const News = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("Todas");
+
   const news = [
     {
       title: "Grupo VAMUS Anuncia Expansão com Abertura de 3 Novas Lojas",
-      category: "Expansão",
+      category: "Milestone",
       date: "15 de Março, 2025",
       summary: "O Grupo VAMUS confirma plano de expansão agressivo com inauguração de três novas unidades estratégicas, reforçando presença no mercado nacional de saúde e bem-estar.",
       featured: true
@@ -46,6 +49,12 @@ const News = () => {
     }
   ];
 
+  const categories = ["Todas", "Produtos", "Parcerias", "ESG", "Milestone", "Inovação"];
+  
+  const filteredNews = selectedCategory === "Todas" 
+    ? news 
+    : news.filter(item => item.category === selectedCategory);
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -65,54 +74,89 @@ const News = () => {
           </div>
         </section>
 
+        {/* Filter Bar */}
+        <section className="py-8 bg-background border-b border-border sticky top-20 z-40">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex flex-wrap gap-3 justify-center">
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    onClick={() => setSelectedCategory(category)}
+                    className="transition-all"
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Featured News */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <Card className="gradient-hero border-0 mb-12">
-                <CardContent className="p-12">
-                  <Badge variant="secondary" className="mb-4">Destaque</Badge>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-foreground">
-                    {news[0].title}
-                  </h2>
-                  <div className="flex items-center gap-2 mb-6 text-primary-foreground/80">
-                    <Calendar className="h-4 w-4" />
-                    <span>{news[0].date}</span>
-                  </div>
-                  <p className="text-xl text-primary-foreground/90 mb-6">
-                    {news[0].summary}
-                  </p>
-                  <Button variant="cta" className="group">
-                    Leia Mais
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </CardContent>
-              </Card>
+              {filteredNews.length > 0 && filteredNews[0].featured && (
+                <Card className="gradient-hero border-0 mb-12">
+                  <CardContent className="p-12">
+                    <Badge variant="secondary" className="mb-4">Destaque</Badge>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-foreground">
+                      {filteredNews[0].title}
+                    </h2>
+                    <div className="flex items-center gap-2 mb-6 text-primary-foreground/80">
+                      <Calendar className="h-4 w-4" />
+                      <span>{filteredNews[0].date}</span>
+                      <Badge variant="outline" className="ml-2 border-primary-foreground/30 text-primary-foreground">
+                        {filteredNews[0].category}
+                      </Badge>
+                    </div>
+                    <p className="text-xl text-primary-foreground/90 mb-6">
+                      {filteredNews[0].summary}
+                    </p>
+                    <Button variant="cta" className="group">
+                      Ver Notícia
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              )}
 
               {/* News Grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {news.slice(1).map((item, index) => (
-                  <Card key={index} className="border-border hover:shadow-xl transition-shadow">
-                    <CardContent className="p-6">
-                      <Badge variant="outline" className="mb-3">{item.category}</Badge>
-                      <h3 className="text-xl font-bold mb-3 text-foreground">
-                        {item.title}
-                      </h3>
-                      <div className="flex items-center gap-2 mb-4 text-muted-foreground text-sm">
-                        <Calendar className="h-4 w-4" />
-                        <span>{item.date}</span>
-                      </div>
-                      <p className="text-muted-foreground mb-4 leading-relaxed">
-                        {item.summary}
-                      </p>
-                      <Button variant="link" className="p-0 h-auto group">
-                        Leia Mais
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+              {filteredNews.length > 0 ? (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredNews.slice(filteredNews[0].featured ? 1 : 0).map((item, index) => (
+                    <Card key={index} className="border-border hover:shadow-xl transition-shadow">
+                      <CardContent className="p-6">
+                        <Badge variant="outline" className="mb-3">{item.category}</Badge>
+                        <h3 className="text-xl font-bold mb-3 text-foreground">
+                          {item.title}
+                        </h3>
+                        <div className="flex items-center gap-2 mb-4 text-muted-foreground text-sm">
+                          <Calendar className="h-4 w-4" />
+                          <span>{item.date}</span>
+                        </div>
+                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                          {item.summary}
+                        </p>
+                        <Button variant="link" className="p-0 h-auto group">
+                          Ver Notícia
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <Card className="border-border">
+                  <CardContent className="p-12 text-center">
+                    <p className="text-xl text-muted-foreground">
+                      Nenhuma notícia encontrada para a categoria selecionada.
+                    </p>
+                  </CardContent>
+                </Card>
+              )}
             </div>
           </div>
         </section>

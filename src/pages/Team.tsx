@@ -9,25 +9,29 @@ const Team = () => {
       name: "João Silva",
       position: "CEO & Fundador",
       bio: "Mais de 15 anos de experiência no mercado de suplementação e bem-estar. Visionário por trás da expansão do Grupo VAMUS.",
-      email: "joao@grupovamus.com.br"
+      email: "joao@grupovamus.com.br",
+      image: "" // Adicionar URL da foto profissional aqui
     },
     {
       name: "Maria Santos",
       position: "CFO",
       bio: "Especialista em finanças corporativas com histórico em empresas de grande porte. Responsável pela gestão financeira estratégica do grupo.",
-      email: "maria@grupovamus.com.br"
+      email: "maria@grupovamus.com.br",
+      image: "" // Adicionar URL da foto profissional aqui
     },
     {
       name: "Pedro Costa",
       position: "COO",
       bio: "Expertise em operações e logística. Lidera a expansão e otimização da rede de lojas do grupo.",
-      email: "pedro@grupovamus.com.br"
+      email: "pedro@grupovamus.com.br",
+      image: "" // Adicionar URL da foto profissional aqui
     },
     {
       name: "Ana Oliveira",
       position: "CMO",
       bio: "Profissional de marketing com experiência em construção de marcas nacionais. Responsável pelo posicionamento estratégico das marcas do grupo.",
-      email: "ana@grupovamus.com.br"
+      email: "ana@grupovamus.com.br",
+      image: "" // Adicionar URL da foto profissional aqui
     }
   ];
 
@@ -55,10 +59,20 @@ const Team = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
               {leadership.map((member, index) => (
-                <Card key={index} className="border-border hover:shadow-xl transition-shadow">
+                <Card key={index} className="border-border hover:shadow-xl transition-shadow group">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-6">
-                      <div className="w-24 h-24 rounded-full gradient-primary flex-shrink-0" />
+                      {member.image ? (
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-24 h-24 rounded-full object-cover flex-shrink-0 ring-2 ring-border group-hover:ring-primary transition-all"
+                        />
+                      ) : (
+                        <div className="w-24 h-24 rounded-full gradient-primary flex-shrink-0 flex items-center justify-center text-2xl font-bold text-primary-foreground ring-2 ring-border group-hover:ring-primary transition-all">
+                          {member.name.split(' ').map(n => n[0]).join('')}
+                        </div>
+                      )}
                       <div className="flex-1">
                         <h3 className="text-2xl font-bold mb-1 text-foreground">{member.name}</h3>
                         <div className="text-primary font-semibold mb-4">{member.position}</div>
