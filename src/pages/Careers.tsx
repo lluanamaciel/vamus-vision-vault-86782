@@ -6,6 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Briefcase, Clock, ArrowRight } from "lucide-react";
 
 const Careers = () => {
+  // Link para o sistema de recrutamento - atualize com o link real
+  const RECRUITMENT_LINK = "https://forms.gle/INSERIR_LINK_AQUI";
+  
   const jobs = [
     {
       title: "Gerente de Loja - Body Monster",
@@ -75,8 +78,14 @@ const Careers = () => {
               <p className="text-xl text-primary-foreground/90 mb-8">
                 Faça parte de uma equipe que transforma vidas através da saúde e bem-estar
               </p>
-              <Button variant="cta" size="lg">
-                Ver Todas as Vagas
+              <Button 
+                variant="cta" 
+                size="lg"
+                asChild
+              >
+                <a href={RECRUITMENT_LINK} target="_blank" rel="noopener noreferrer">
+                  Ver Todas as Vagas
+                </a>
               </Button>
             </div>
           </div>
@@ -141,9 +150,15 @@ const Careers = () => {
                             </Badge>
                           </div>
                         </div>
-                        <Button variant="hero" className="group md:flex-shrink-0">
-                          Candidatar-se
-                          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        <Button 
+                          variant="hero" 
+                          className="group md:flex-shrink-0"
+                          asChild
+                        >
+                          <a href={RECRUITMENT_LINK} target="_blank" rel="noopener noreferrer">
+                            Candidatar-se
+                            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                          </a>
                         </Button>
                       </div>
                       <p className="text-muted-foreground leading-relaxed">{job.description}</p>
@@ -167,8 +182,14 @@ const Careers = () => {
                   Envie seu currículo para nosso banco de talentos e seja considerado 
                   para futuras oportunidades no Grupo VAMUS.
                 </p>
-                <Button variant="cta" size="lg">
-                  Cadastrar Currículo
+                <Button 
+                  variant="cta" 
+                  size="lg"
+                  asChild
+                >
+                  <a href={RECRUITMENT_LINK} target="_blank" rel="noopener noreferrer">
+                    Cadastrar Currículo
+                  </a>
                 </Button>
               </CardContent>
             </Card>
