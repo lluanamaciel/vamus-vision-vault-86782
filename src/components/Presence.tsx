@@ -1,36 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Store, Building2, TrendingUp } from "lucide-react";
-import { MapContainer, TileLayer, Marker, Popup, Circle } from "react-leaflet";
-import { useEffect } from "react";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-
-// Fix for default marker icons in react-leaflet
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-});
-
-// Custom icons
-const storeIcon = new L.Icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-
-const distributionIcon = new L.Icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
 
 const Presence = () => {
   const stats = [
@@ -101,64 +70,38 @@ const Presence = () => {
           {/* Mapa Interativo */}
           <Card className="bg-background/10 backdrop-blur-sm border-secondary-foreground/20 shadow-lg overflow-hidden">
             <CardContent className="p-0">
-              <div className="h-[500px] w-full relative">
-                <MapContainer
-                  center={manausCenter}
-                  zoom={12}
-                  scrollWheelZoom={false}
-                  style={{ height: "100%", width: "100%" }}
-                  className="z-0"
-                >
-                  <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
-                  
-                  {/* Círculo de cobertura */}
-                  <Circle
-                    center={manausCenter}
-                    radius={8000}
-                    pathOptions={{
-                      color: "#10b981",
-                      fillColor: "#10b981",
-                      fillOpacity: 0.1,
-                    }}
-                  />
-
-                  {/* Marcadores das lojas */}
-                  {stores.map((store) => (
-                    <Marker key={store.id} position={store.position} icon={storeIcon}>
-                      <Popup>
-                        <div className="text-center">
-                          <strong>{store.name}</strong>
-                          <p className="text-sm text-muted-foreground">Loja Física</p>
+              <div className="h-[500px] w-full relative bg-muted/20 flex items-center justify-center">
+                <div className="text-center space-y-4">
+                  <MapPin className="h-20 w-20 text-accent mx-auto animate-pulse" />
+                  <div className="space-y-2">
+                    <h3 className="text-2xl font-bold text-secondary-foreground">Manaus, Amazonas</h3>
+                    <p className="text-lg text-secondary-foreground/80">9 Lojas Físicas + Centro de Distribuição</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6 max-w-2xl mx-auto px-4">
+                      {stores.map((store) => (
+                        <div key={store.id} className="flex items-center gap-2 bg-background/20 backdrop-blur-sm p-3 rounded-lg">
+                          <Store className="h-4 w-4 text-red-500 flex-shrink-0" />
+                          <span className="text-sm font-medium text-secondary-foreground">{store.name}</span>
                         </div>
-                      </Popup>
-                    </Marker>
-                  ))}
-
-                  {/* Marcador do Centro de Distribuição */}
-                  <Marker position={distributionCenter.position} icon={distributionIcon}>
-                    <Popup>
-                      <div className="text-center">
-                        <strong>{distributionCenter.name}</strong>
-                        <p className="text-sm text-muted-foreground">Logística Integrada</p>
+                      ))}
+                      <div className="flex items-center gap-2 bg-background/20 backdrop-blur-sm p-3 rounded-lg">
+                        <Building2 className="h-4 w-4 text-blue-500 flex-shrink-0" />
+                        <span className="text-sm font-medium text-secondary-foreground">{distributionCenter.name}</span>
                       </div>
-                    </Popup>
-                  </Marker>
-                </MapContainer>
-
-                {/* Legenda sobre o mapa */}
-                <div className="absolute top-4 right-4 bg-background/95 backdrop-blur-sm p-4 rounded-lg shadow-lg z-[1000] border border-border">
-                  <h4 className="font-bold text-sm mb-2">Liderança Consolidada no Norte</h4>
-                  <div className="space-y-2 text-xs">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                      <span>Lojas Físicas (9)</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                      <span>Centro de Distribuição (1)</span>
+                  </div>
+                  
+                  {/* Legenda */}
+                  <div className="mt-6 bg-background/95 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-border inline-block">
+                    <h4 className="font-bold text-sm mb-2 text-foreground">Liderança Consolidada no Norte</h4>
+                    <div className="space-y-2 text-xs text-foreground">
+                      <div className="flex items-center gap-2">
+                        <Store className="w-4 h-4 text-red-500" />
+                        <span>Lojas Físicas (9)</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Building2 className="w-4 h-4 text-blue-500" />
+                        <span>Centro de Distribuição (1)</span>
+                      </div>
                     </div>
                   </div>
                 </div>
