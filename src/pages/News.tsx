@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const News = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("Todas");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
   const news = [
     {
@@ -19,13 +19,13 @@ const News = () => {
     },
     {
       title: "FIT ONE Nutrition Lança Nova Linha de Suplementos Premium",
-      category: "Produtos",
+      category: "Products",
       date: "8 de Março, 2025",
       summary: "A marca de suplementação esportiva do grupo apresenta linha exclusiva desenvolvida com tecnologia de ponta e foco em alta performance."
     },
     {
       title: "Body Fit Closet: Parceria com Marcas Internacionais",
-      category: "Parcerias",
+      category: "Partnerships",
       date: "1 de Março, 2025",
       summary: "A divisão de moda fitness do grupo anuncia parceria estratégica com marcas globais, ampliando portfólio de produtos premium."
     },
@@ -43,15 +43,15 @@ const News = () => {
     },
     {
       title: "VAMUS Investe em Tecnologia e Experiência Digital",
-      category: "Inovação",
+      category: "Innovation",
       date: "5 de Fevereiro, 2025",
       summary: "Grupo anuncia investimento em plataforma digital integrada para melhorar experiência omnichannel dos clientes."
     }
   ];
 
-  const categories = ["Todas", "Produtos", "Parcerias", "ESG", "Milestone", "Inovação"];
+  const categories = ["All", "Products", "Partnerships", "ESG", "Milestone", "Innovation"];
   
-  const filteredNews = selectedCategory === "Todas" 
+  const filteredNews = selectedCategory === "All" 
     ? news 
     : news.filter(item => item.category === selectedCategory);
 
