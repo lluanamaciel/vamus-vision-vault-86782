@@ -33,14 +33,14 @@ const Contact = () => {
       // Simulação de envio (substituir por integração real quando disponível)
       toast({
         title: "Mensagem enviada com sucesso!",
-        description: "Em breve entraremos em contato para discutir oportunidades de parceria.",
+        description: "Em breve entraremos em contato.",
       });
       
       setFormData({ name: "", email: "", company: "", message: "" });
     } catch (error) {
       toast({
         title: "Erro ao enviar",
-        description: "Por favor, tente novamente ou entre em contato através do email: contato@grupovamus.com.br",
+        description: "Por favor, tente novamente ou use o email contato@grupovamus.com.br.",
         variant: "destructive",
       });
     }

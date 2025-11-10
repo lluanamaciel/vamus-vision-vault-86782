@@ -6,8 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Briefcase, Clock, ArrowRight } from "lucide-react";
 
 const Careers = () => {
-  // Link para o sistema de recrutamento - atualize com o link real
-  const RECRUITMENT_LINK = "https://forms.gle/INSERIR_LINK_AQUI";
+  // Link para o sistema de recrutamento - atualize com o link real quando disponível
+  const RECRUITMENT_LINK = "[INSERIR LINK DO SISTEMA DE RECRUTAMENTO AQUI]";
   
   const jobs = [
     {
